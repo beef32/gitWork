@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
 
+  URLTitle = 'siple URL';
+
   constructor() { }
 
   ngOnInit() {
