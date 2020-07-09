@@ -1,11 +1,11 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<h1>tytuł</h1>
+<h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
 <nav>
   <ul>
-    <li><a routerLink=''></a>first</li>
-    <li><a routerLink=''></a>second</li>
+    <li><a routerLink="" routerLinkActive="active">First Component</a></li>
+    <li><a routerLink="second" routerLinkActive="active">Second Component</a></li>
   </ul>
 </nav>
-
-
+<!-- The routed views render in the <router-outlet>-->
 <router-outlet></router-outlet>
