@@ -8,3 +8,27 @@
 <input type="text" value="{{ URLTitle }}" readonly><br>
 <input type="text" [value]="URLTitle " readonly><br>
 <input type="text" bind-value="URLTitle" readonly><br>
+
+<button [disabled]='isDisabled'>isDisabled</button>
+
+<table>
+    <tr *ngFor="let user of users , let i = index">
+        {{i}}
+        <td class="id">{{ user.id }} </td> 
+
+        <td>{{ user.name }} </td>
+        <td>{{ user.username }} </td>
+        <td>{{ user.address.street }} </td>
+        <td class="suite">{{ user.address.suite }} </td>
+        <td class="lat">{{ user.address.geo.lat }} </td>
+        <td class="lng">{{ user.address.geo.lng }} </td>
+    </tr>
+</table><br>
+
+<table>
+    <tr  *ngFor="let apies of api" ></tr>
+    <td>{{ apies.results.package }} </td>
+    <td>{{ apies.total }} </td>
+</table>
+<!-- <label > {{ street }} qqqqqq</label>
+<label > {{ address }} qdd</label> -->

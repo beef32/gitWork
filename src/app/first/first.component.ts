@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WorkService } from '../work.service';
 
 @Component({
   selector: 'app-first',
@@ -8,10 +9,36 @@ import { Component, OnInit } from '@angular/core';
 export class FirstComponent implements OnInit {
 
   URLTitle = 'siple URL';
+  isDisabled = true;
 
-  constructor() { }
+  id: number;
+  name: any;
+  address: any;
+  street: any;
+
+  users = [];
+  api;
+
+  constructor(private workService: WorkService) { }
 
   ngOnInit() {
+    this.getUsersList();
+    this.apiGet();
   }
 
-}
+  getUsersList() {
+    this.workService.getUsers().subscribe((data:Object[]) => {this.users = data
+      // this.street = data['address'] ['city'];
+      // this.address = data.address.zipcode;
+    });
+  }
+
+
+  apiGet() {
+    this.workService.getApi().subscribe(
+      (data ) => { this.api = data.results,
+        error => console.error('There was an error!', error)
+        console.log(this.api)
+      })
+  }
+};
