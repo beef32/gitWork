@@ -9,14 +9,16 @@
 <input type="text" [value]="URLTitle " readonly><br>
 <input type="text" bind-value="URLTitle" readonly><br>
 
-<button [disabled]='isDisabled'>isDisabled</button>
+<button [disabled]='isDisabled'>isDisabled</button><br><br>
+
+<label for="">{{selectedName}} </label><br><br>
 
 <table>
     <tr *ngFor="let user of users , let i = index">
         {{i}}
         <td class="id">{{ user.id }} </td> 
 
-        <td>{{ user.name }} </td>
+        <td (mouseover) ="selectedName=user.name" >{{ user.name }} </td>
         <td>{{ user.username }} </td>
         <td>{{ user.address.street }} </td>
         <td class="suite">{{ user.address.suite }} </td>
