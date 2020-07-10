@@ -16,6 +16,8 @@ export class FirstComponent implements OnInit {
   address: any;
   street: any;
 
+  selectedName: string;
+
   users = [];
   api;
 
@@ -27,7 +29,7 @@ export class FirstComponent implements OnInit {
   }
 
   getUsersList() {
-    this.workService.getUsers().subscribe((data:Object[]) => {this.users = data
+    this.workService.getUsers().subscribe((data) => {this.users = data
       // this.street = data['address'] ['city'];
       // this.address = data.address.zipcode;
     });

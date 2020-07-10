@@ -6,5 +6,12 @@
                 width: 80px;
             }
            
-           
+           .selectedName {
+               cursor: pointer;
+           }
+
+           .nameHover {
+               color: white;
+               background-color: rgb(39, 192, 212);
+           }
 
