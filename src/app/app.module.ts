@@ -8,7 +8,7 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { WorkService } from './work.service';
 
-
+// ok
 @NgModule({
   declarations: [
     AppComponent,
