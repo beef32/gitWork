@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkService } from '../work.service';
-
+// ok
 @Component({
   selector: 'app-first',
   templateUrl: './first.component.html',
