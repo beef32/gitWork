@@ -12,14 +12,15 @@
 <button [disabled]='isDisabled'>isDisabled</button><br><br>
 
 <label> Selected user: {{selectedName}} </label><br><br>
-
+   <!-- ok-->
 <table>
     <tr *ngFor="let user of users , let i = index">
         {{i}}
         <td class="id">{{ user.id }} </td> 
 
         <td class="selectedName" (mouseover) ="selectedName=user.name"  (mouseleave) = "selectedName=''"
-         [class.nameHover] = "selectedName== user.name ">{{ user.name }} </td>
+         [class.nameHover] = "selectedName == user.name ">{{ user.name }} </td>
+      
         <td>{{ user.username }} </td>
         <td>{{ user.address.street }} </td>
         <td class="suite">{{ user.address.suite }} </td>
