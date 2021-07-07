@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'first', component: FirstComponent},
+  {path: 'second', component:SecondComponent},
+  { path: '',   redirectTo: 'first', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '**', component: FirstComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

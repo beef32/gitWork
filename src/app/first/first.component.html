@@ -1,1 +1,38 @@
 <p>first works!</p>
+
+<a href="" title="{{ URLTitle }}" class="url">Link</a><br>
+<a href="" [title]="URLTitle" class="url">Link</a><br>
+<a href="" bind-title="URLTitle" class="url">Link</a><br>
+<br>
+
+<input type="text" value="{{ URLTitle }}" readonly><br>
+<input type="text" [value]="URLTitle " readonly><br>
+<input type="text" bind-value="URLTitle" readonly><br>
+
+<button [disabled]='isDisabled'>isDisabled</button><br><br>
+
+<label> Selected user: {{selectedName}} </label><br><br>
+   <!-- ok-->
+<table>
+    <tr *ngFor="let user of users , let i = index">
+        {{i}}
+        <td class="id">{{ user.id }} </td> 
+
+        <td class="selectedName" (mouseover) ="selectedName=user.name"  (mouseleave) = "selectedName=''"
+         [class.nameHover] = "selectedName == user.name ">{{ user.name }} </td>
+      
+        <td>{{ user.username }} </td>
+        <td>{{ user.address.street }} </td>
+        <td class="suite">{{ user.address.suite }} </td>
+        <td class="lat">{{ user.address.geo.lat }} </td>
+        <td class="lng">{{ user.address.geo.lng }} </td>
+    </tr>
+</table><br>
+
+<table>
+    <tr  *ngFor="let apies of api" ></tr>
+    <td>{{ apies.results.package }} </td>
+    <td>{{ apies.total }} </td>
+</table>
+<!-- <label > {{ street }} qqqqqq</label>
+<label > {{ address }} qdd</label> -->
